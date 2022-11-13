@@ -1,0 +1,227 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+main {
+    padding: 7rem 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 124rem;
+}
+
+a {
+    color: #007AFF;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 0.4rem 1.4rem;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    border-radius: .6rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.check {
+    margin-right: 1.3rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+    border-radius: .3rem;
+
+    &-wrapper {
+        margin-top: 3rem;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        &:checked ~ .checkmark img {
+            display: block;
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:  #c5c5c5;
+        border-radius: .3rem;
+
+        img {
+            display: none;
+        }
+    }
+}
+
+.form {
+    max-width: 28rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media screen and ( min-width:480px ) {
+        max-width: 44rem;
+    }
+
+
+    @media screen and ( min-width: 640px) {
+        max-width: 40rem;
+    }
+
+    @media screen and ( min-width: 960px) {
+        max-width: 35rem;
+    }
+
+    @media screen and ( min-width: 1200px ) {
+        max-width: 47rem;
+    }
+
+    &__icon {
+        display: block;
+        margin: 0 auto 5.7rem;
+    }
+
+    &-title {
+        font-family: 'SF UI Display';
+        font-style: normal;
+        text-align: center;
+        
+        &__main {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            font-weight: 600;
+            color: #000;
+
+            
+            @media screen and (min-width: 640px) {
+                font-size: 3.4rem;
+                line-height: 4.1rem;
+            }
+        }
+
+        &__subtitle {
+            margin-top: 1.2rem;
+            font-weight: 400;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            color: rgba(60, 60, 67, 0.6);
+        }
+
+    }
+
+    &-header, &-body, &-footer {
+        flex: 1 0 100%;
+    }
+
+    &-body {
+        padding-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &-footer {
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'SF UI Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: rgba(60, 60, 67, 0.6);
+
+        p:not(:last-of-type) {
+            margin-bottom: 1.8rem;
+        }
+    }
+
+    .input {
+        padding: 1.4rem;
+        width: 100%;
+        font-family: 'SF UI Display';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.7rem;
+        line-height: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: .3rem;
+        font-style: normal;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.26);
+        }
+
+        &-wrapper {
+            width: 100%;
+
+            p {
+                padding-top: .6rem;
+                font-family: 'SF UI Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 16px;
+                color: rgba(60, 60, 67, 0.6);
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: 1.8rem;
+            }
+
+            &-half {
+                width: 100%;
+
+                @media screen and ( min-width: 640px ) {
+                    width: calc((100% / 2) - 1rem);
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin: 0 auto;
+    }
+}
